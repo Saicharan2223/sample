@@ -1,0 +1,61 @@
+<p-toast></p-toast>
+
+<p-table [value]="rooms">
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between">
+            <h4 class="m-0">Manage Rooms</h4>
+            <button pButton class="p-button-success mr-5" label="New" icon="pi pi-plus" (click)="addRoom()"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Room Name</th><th>Room Price</th><th>Description</th><th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-room>
+        <tr>
+            <td>{{room.name}}</td>
+            <td>{{room.price}}</td>
+            <td>{{room.description}}</td>
+            
+            <td>
+                <button pButton class="p-button-rounded p-button-success mr-1" icon="pi pi-pencil" (click)="edit(room)"></button>
+                <button pButton class="p-button-rounded p-button-danger" icon="pi pi-trash" (click)="delete(room)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog [(visible)]="roomDialog" header="Room Details" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div>
+            <label for="rid">Room ID</label>
+            <p-inputNumber id="rid" [(ngModel)]="frmRoom.id" [readonly]="true"></p-inputNumber>
+        </div>
+        <div>
+            <label for="rname">Room Name</label>
+            <input type="text" pInputText id="rname"  [(ngModel)]="frmRoom.name" />
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <p-inputNumber id="price" [(ngModel)]="frmRoom.price"></p-inputNumber>
+        </div>
+        <div>
+            <label for="desc">Description</label>
+            <textarea id="desc" cols="20" rows="3" pInputTextarea [(ngModel)]="frmRoom.description"></textarea>
+        </div>
+    
+        <div>
+            <label for="desc">Room Type</label>
+            <textarea id="desc" cols="20" rows="3" pInputTextarea [(ngModel)]="frmRoom.rid"></textarea>
+        </div>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton class="p-button-text" icon="pi pi-times" label="Cancel" (click)="hideDialog()"></button>
+        <button pButton class="p-button-text" icon="pi pi-check" label="Submit" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
+<p-confirmDialog [style]="{'width':'450px'}">
+
+</p-confirmDialog>

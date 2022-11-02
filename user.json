@@ -1,0 +1,40 @@
+{
+  "wsrooms": [
+    {
+      "id": 1,
+      "name": "Suites",
+      "price": "5000",
+      "description": "Suite rooms",
+      "rid": 1
+    },
+    {
+      "id": 2,
+      "name": "King room",
+      "price": 10000,
+      "description": "Luxury rooms",
+      "rid": 2
+    },
+    {
+      "id": 3,
+      "name": "queen room",
+      "price": 9000,
+      "description": "Room for Women",
+      "rid": 3
+    },
+    {
+      "id": 4,
+      "name": "luxury",
+      "price": 5000,
+      "description": "luxury rooms",
+      "rid": "3"
+    },
+    {
+      "id": 5,
+      "name": "deluxe rooms",
+      "price": 5000,
+      "description": "saiuodfhkdlmdldm",
+      "image": "",
+      "rid": "1"
+    }
+  ]
+}
